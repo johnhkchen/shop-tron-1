@@ -1,0 +1,22 @@
+{
+  "name": "shop-tron-1",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/tailwind": "^5.1.0",
+    "@stripe/stripe-js": "^4.0.0",
+    "astro": "^4.11.3",
+    "tailwindcss": "^3.4.4"
+  },
+  "packageManager": "pnpm@9.4.0+sha512.f549b8a52c9d2b8536762f99c0722205efc5af913e77835dbccc3b0b0b2ca9e7dc8022b78062c17291c48e88749c70ce88eb5a74f1fa8c4bf5e18bb46c8bd83a",
+  "devDependencies": {
+    "daisyui": "^4.12.10"
+  }
+}
