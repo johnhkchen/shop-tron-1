@@ -1,15 +1,21 @@
 ---
 import HeroSplash from "@components/HeroSplash.astro";
 import BifoldSplash from "@components/BifoldSplash.astro";
+import bg from "@assets/index_backgrounds.json";
 ---
 <HeroSplash 
   title="Gucci Tennis Collection"
-  bg="url()"
-  bg_narrow="url()"
-/>
+  bg={bg[0]}
+>
+  <div class="flex flex-wrap space-x-3">
+    <button class="btn btn-base-100 w-28">FOR YOU</button>
+    <button class="btn btn-base-100 w-28">FOR US</button>
+  </div>
+</HeroSplash>
 <BifoldSplash />
 <HeroSplash 
   title="Gucci Flora Gorgeous Orchid"
-  bg="url(https://media.gucci.com/dynamic/b3c8/a5J4MVtCeprUHs4TRrhjOj5Z7WLnkFy0dxS8z9_n98OtJ27HFXmKvnqdEjolNOthUnQrwCrgbhbGEyT63bsptGj7u2K0Gz4Qsn0LcYR6hQCSYpL15ac7nRx7EK5OY_U895CDoOinXH9itANSSyYpmQRqa6vbS2pfs6hOvcwDbDsur5on1vq85H0dP43E3MHY0ZrEKjL3L04YqhLnY495rLKAHxhcQCgLPuug24vX9vJ1G82t67nWB2D6PAEolrx+A_pUzcM4OiUq7Hc_b5l_ePVf1ZhfzvDY3q+ck6vKGynpXd5YHF65BtoXOQFwQn02/HP_CinamaticLandscape_Gucci-Flora-juin24-002_001_Default.png)"
-  bg_narrow="url(https://media.gucci.com/dynamic/b3c8/PAEQ1DotwR3d2UCimmirMNlGhO0tZWAAwWrzUPXJcc40tGUN487Bwce5lvObNT9jc92v1+EYnM1r76yV0oWHGGGILJ7KUi3Jytn5NmN2gBIYBhLCCPDLbFhHXDATccqS8Hqk7oR1rI47JbPfInEM9YMNKkbRflWVeYi0xbkN+Npxsq8M5vm1WR+OuHnMsZhHjqgJ9Dqt5V4huE1hvu8De5ECJ8WYZGgwh+kM3W3I_zE=/Miley_1500x2250-70-.jpg)"
-/>
+  bg={bg[3]}
+>
+  <button class="btn rounded-sm glass btn-base-200 outline outline-1 outline-white text-white w-64 opacity-85">EXPLORE NEW IN</button>
+</HeroSplash>

@@ -1,21 +1,47 @@
 ---
-const { title, bg, bg_narrow } = Astro.props;
+const { title, bg } = Astro.props;
+
+const hero_classes = "hero min-h-screen"
+const hero_styles = {
+  '--bg-sm': `url(${bg.sm})`,
+  '--bg-md': `url(${bg.md})`,
+  '--bg-lg': `url(${bg.lg})`,
+  '--bg-xl': `url(${bg.xl})`
+};
+
 ---
+<!-- style={`background-image: url('${bg}')`} -->
+
+<style>
+  .hero {
+    background-image: var(--bg-sm);
+  }
+  @media (min-width: 768px) {
+    .hero {
+      background-image: var(--bg-md);
+    }
+  }
+  @media (min-width: 1024px) {
+    .hero {
+      background-image: var(--bg-lg);
+    }
+  }
+  @media (min-width: 1280px) {
+    .hero {
+      background-image: var(--bg-xl);
+    }
+  }
+</style>
+
 <div
-  class="hero min-h-screen 
-    bg-[url(https://media.gucci.com/dynamic/b3c8/0HluuEqQE0bb9fkaI5tiR0p0S6Xc+rV_aJOCrh6d__UE2SJZ6HSGI6nf1hweG_qe_9fHXtDi4_wbi1gagl5qe0xiODRAqXaSguNmGc6bWasB12FjhkU0wyXVnY0JmgA3l_wc+ve_zjGZ4b2jC+NC2NbJn4hCbu+ew8zsqzAb9ulkQ_W46fj5TeqkMOgctik+ww_234eV00sKKuOA+POPTnTFPmMAnGV5A4tlgkgPioWqyGkGTCy8DXJtZ_xW12Av4flW1byODE_70FDZSYBZwm_12OuU+D1zhR+BmBlQDmJSoU3vQO9lONXEIiaBpcXrWtvlY6bvZR8GXtYnjh9RbblO__Lu58NIncbXE_w8hYTNGKr7OEoQsr1KoOOsIsnzVpTIoMyBNr+GLi2eXN6KpR5tugvG_zCAlaeEKijnbLE=/HP_Hero-FullBleed-Mobile_Gucci-PF24-Tennis-TIERII-June24-240516-DG-Gucci-SH15-049_001_Default.png)]
-    md:bg-[url(https://media.gucci.com/dynamic/b3c8/4gVdjX9QQy39apjnF+uap9hxCg+Vu4SDF_RF1JHIqYYIIpocLbgMq1jOwOLpyj2nrpa76jTXNbf_HBuy6Tougl1Eun4zPFl_5+B2pvoCf9dqFMbMsV50IXpg8Is_zATwlixCwmuoY7A1PlgLdNYRbzHVbhKuFWg9mDpg8mBe+FB4+Ff2iHYbEBxz5+PCGl6y2Bkk4xKfq74wg8Mbx84DQRtJGx7DXad5fzFTqzSem95XrpBQpU21Pva5l79VG_5gfnZcD9hFaSiPu2tb1IbRU15yDs74ai_ukK_nQ9rRkfDysb9UH+APJfAV2aoVYrobf0SUH84vLV6sHJ8wjrksS1Lpp+Owz8ZCHyYlKwuv_wqvR1tfIkQ3qk6U_jgpg88t_Z1GVqiEjGLsSEydb96llqTALwCanbkXBinwuioiW8k=/HP_Hero-FullBleed-Desktop_Gucci-PF24-Tennis-TIERII-June24-240516-DG-Gucci-SH15-049_001_Default.png)]
-    bg-cover"
+  class={hero_classes}
+  style={hero_styles}
   >
   <div class="hero-overlay bg-opacity-10"></div>
   <div class="mt-[40svh] hero-content text-white text-center">
     <div class="max-w-md flex flex-col items-center">
       <h1 class="mb-6 text-3xl">{title}</h1>
-      <div class="flex flex-wrap space-x-3">
-        <button class="btn btn-base-100 w-28">FOR YOU</button>
-        <button class="btn btn-base-100 w-28">FOR US</button>
-      </div>
+      <slot />
     </div>
   </div>
-  <span>{bg_narrow}</span>
 </div>
